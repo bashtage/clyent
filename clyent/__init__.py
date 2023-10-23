@@ -13,7 +13,7 @@ import sys
 
 from clyent.errors import ShowHelp
 
-from ._version import get_versions
+from ._version import __version__
 from .colors import print_colors
 
 class color(object):
@@ -156,5 +156,3 @@ def run_command(args, exit=True):
         else:
             return 1
 
-__version__ = get_versions()['version']
-del get_versions
