@@ -8,3 +8,6 @@ dynamic = ["version"]
 
 [tool.setuptools_scm]
 version_file = "clyent/_version.py"
+
+[tool.isort]
+profile = 'black'
