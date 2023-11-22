@@ -1,13 +1,46 @@
 [build-system]
-requires = ["setuptools>=64", "setuptools_scm>=8,<9"]
 build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools>=64",
+    "setuptools_scm>=8,<9",
+]
 
 [project]
-name = 'clyent'
-dynamic = ["version"]
+name = "clyent"
+description = "Command line client Library for windwos and posix"
+dynamic = [
+    "version",
+    "dependencies",
+    "readme",
+]
+license = {file = "LICENSE"}
+authors = [
+  {name = "Continuum Analytics", email = "srossross@gmail.com"},
+]
+
+[project.urls]
+"Bug Tracker" = "http://github.com/binstar/clyent/issues"
+Documentation = "http://github.com/binstar/clyent"
+Homepage = "http://github.com/binstar/clyent"
+Repository = "http://github.com/binstar/clyent.git"
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+[tool.flake8]
+extend-ignore = "E203"
+max-line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.setuptools.dynamic.readme]
+content-type = "text/markdown"
+file = ["README.md"]
+
+[tool.setuptools.package-dir]
+"" = "."
 
 [tool.setuptools_scm]
 version_file = "clyent/_version.py"
-
-[tool.isort]
-profile = 'black'
